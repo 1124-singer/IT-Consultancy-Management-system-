@@ -1,0 +1,473 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f7;
+    color: #333;
+    overflow-x: hidden;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.team-hero {
+    position: relative;
+    height: 40vh;
+    min-height: 300px;
+    background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.95)), 
+                url('https://source.unsplash.com/random/1920x1080/?team,technology') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    margin-top: 75px;
+}
+.team-hero-content {
+    max-width: 800px;
+    color: #fff;
+}
+.team-hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+.team-hero-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.team-intro {
+    padding: 80px 0;
+    text-align: center;
+}
+.intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.intro-content h2 {
+    color: #0a192f;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+.intro-content h2:after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: #64ffda;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.intro-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
+.leadership-team {
+    padding: 40px 0 80px;
+    background-color: #fff;
+}
+.leadership-team h2,.team-members h2 {
+    color: #0a192f;
+    font-size: 2rem;
+    margin-bottom: 50px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.leadership-team h2:after,
+.team-members h2:after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: #64ffda;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+.team-member {
+    display: flex;
+    background-color: #f5f5f7;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+.member-photo {
+    flex: 0 0 40%;
+    overflow: hidden;
+    position: relative;
+}
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.team-member:hover .member-photo img {
+    transform: scale(1.05);
+}
+.member-info {
+    flex: 0 0 60%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+.member-info h3 {
+    color: #0a192f;
+    margin-bottom: 5px;
+    font-size: 1.4rem;
+}
+.member-title {
+    color: #64ffda;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+.member-bio {
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: auto;
+}
+.member-social {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+.member-social a {
+    color: #0a192f;
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.member-social a:hover {
+    color: #64ffda;
+    transform: translateY(-3px);
+}
+.team-members {
+    padding: 80px 0;
+    background-color: #f5f5f7;
+    position: relative;
+    overflow: hidden;
+}
+.floating-team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 35px;
+    padding: 20px 0 50px;
+}
+.team-card {
+    height: 380px;
+    perspective: 1000px;
+    position: relative;
+    animation-play-state: running;
+}
+.hexagon {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transition: transform 0.5s ease;
+}
+.hexagon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.team-card:hover .hexagon {
+    transform: scale(1.05);
+}
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 20px rgba(10, 25, 47, 0.1);
+    border-radius: 15px;
+}
+.team-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    border-radius: 15px;
+}
+.card-front {
+    background-color: white;
+}
+.card-back {
+    background-color: #0a192f;
+    color: white;
+    transform: rotateY(180deg);
+}
+.card-front h3 {
+    color: #0a192f;
+    margin: 10px 0 5px;
+    font-size: 1.3rem;
+}
+.card-front p {
+    color: #64ffda;
+    font-weight: 500;
+}
+.card-back h3 {
+    color: #fff;
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+}
+.card-back .member-title {
+    color: #64ffda;
+    margin-bottom: 15px;
+}
+.card-back .member-bio {
+    color: #ccd6f6;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    max-width: 90%;
+}
+.member-skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+.member-skills span {
+    background-color: rgba(100, 255, 218, 0.2);
+    color: #64ffda;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+.card-back .member-social a {
+    color: white;
+    margin: 0 8px;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.card-back .member-social a:hover {
+    color: #64ffda;
+    transform: translateY(-3px);
+}
+@keyframes float {
+    0% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(20px);
+    }
+}
+.join-team {
+    padding: 80px 0;
+    background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.95)), 
+                url('https://source.unsplash.com/random/1920x1080/?office,technology') no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+
+.join-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.join-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.join-content p {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ccd6f6;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #64ffda;
+    color: #0a192f;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #64ffda;
+}
+
+.cta-button:hover {
+    background-color: transparent;
+    color: #64ffda;
+    transform: translateY(-5px);
+}
+
+footer {
+    background-color: #0a192f;
+    color: #ccd6f6;
+    padding: 50px 20px 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.footer-logo h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    opacity: 0.8;
+    max-width: 300px;
+}
+
+.footer-links h4, .footer-social h4 {
+    color: #64ffda;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #ccd6f6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #64ffda;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: #64ffda;
+    color: #0a192f;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+@media screen and (max-width: 992px) {
+    .team-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+    
+    .team-member {
+        flex-direction: column;
+    }
+    
+    .member-photo {
+        flex: 0 0 auto;
+        height: 250px;
+    }
+    
+    .floating-team-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .team-hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .intro-content h2, 
+    .leadership-team h2, 
+    .team-members h2, 
+    .join-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .floating-team-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .floating-team-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        justify-content: center;
+    }
+}
